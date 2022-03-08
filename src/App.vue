@@ -18,6 +18,7 @@
       </div>
     </header>
     <main>
+      <input class="searchPW" type="search" placeholder="search..." />
       <table>
         <thead>
           <tr class="passtr">
@@ -86,10 +87,11 @@ import {
 } from "bootstrap-vue";
 
 export function getPassword(username, password) {
-  let savedpassword = JSON.parse(localStorage.getItem(username))[username];
-  savedpassword = savedpassword.loginpassword;
+  let savedpassword;
+  let data = JSON.parse(localStorage.getItem(username))[username];
+  savedpassword = data.loginpassword;
   if (password != savedpassword) return "Password is wrong!";
-  localStorage.getItem(username);
+  let service = data.
 }
 export function setPassword(
   username,
@@ -243,6 +245,20 @@ header {
   &:not(:last-child) {
     margin-bottom: 6px;
   }
+}
+
+.searchPW {
+  width: 100%;
+  max-width: 800px;
+  background: var(--clr-black-2);
+  border: 1px solid var(--clr-white-1);
+  border-radius: 99px;
+  color: inherit;
+  padding: 1rem;
+}
+
+main {
+  padding: 1rem;
 }
 
 table {

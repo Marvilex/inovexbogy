@@ -1,4 +1,4 @@
-# passwordmanager
+# passwormanager
 
 ## Project setup
 ```
